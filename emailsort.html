@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree View and Email Sorting</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tree View</h1>
+    <div id="treeContainer"></div>
+
+    <h1>Email Sorting</h1>
+    <ul id="emailList"></ul>
+
+    <script>
+        // Tree View Logic
+        const treeData = [
+            {
+                label: 'Parent 1',
+                children: [
+                    { label: 'Child 1.1' },
+                    {
+                        label: 'Child 1.2',
+                        children: [
+                            { label: 'Grandchild 1.2.1' },
+                            { label: 'Grandchild 1.2.2' }
+                        ]
+                    }
+                ]
+            },
+            { label: 'Parent 2' }
+        ];
+
+        function renderTree(data) {
+            const ul = document.createElement('ul');
+            data.forEach(node => {
+                const li = document.createElement('li');
+                li.textContent = node.label;
+                if (node.children && node.children.length > 0) {
+                    li.appendChild(renderTree(node.children));
+                }
+                ul.appendChild(li);
+            });
+            return ul;
+        }
+
+        document.getElementById('treeContainer').appendChild(renderTree(treeData));
+
+        // Email Sorting Logic
+        const emails = [
+            'user1@gmail.com',
+            'user2@yahoo.com',
+            'user3@gmail.com',
+            'user4@outlook.com'
+        ];
+
+        const sortedEmails = emails.sort((a, b) => {
+            const domainA = a.split('@')[1];
+            const domainB = b.split('@')[1];
+            return domainA.localeCompare(domainB);
+        });
+
+        function displayEmails(emailList) {
+            const ul = document.getElementById('emailList');
+            emailList.forEach(email => {
+                const li = document.createElement('li');
+                li.textContent = email;
+                ul.appendChild(li);
+            });
+        }
+
+        displayEmails(sortedEmails);
+    </script>
+</body>
+</html>

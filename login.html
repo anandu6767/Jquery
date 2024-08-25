@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="login-container">
+        <!-- Header -->
+        <h2>Welcome Back</h2>
+        <p>Login to your account</p>
+        <!-- Form Fields -->
+        <form id="login-form">
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder=" ">
+                <label for="email" class="floating-label">Email:</label>
+                <span id="email-error" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder=" ">
+                <label for="password" class="floating-label">Password:</label>
+                <span id="password-error" class="error-message"></span>
+            </div>
+            <!-- Options -->
+            <div class="form-options">
+                <label for="remember-me" class="remember-me-label">
+                  <input type="checkbox" id="remember-me"> Remember Me
+                </label>
+                <div class="forgot-password-container">
+                  <a href="#" id="forgot-password">Forgot Password?</a>
+                </div>
+              </div>
+            <!-- Buttons -->
+            <button type="button" id="login-button">Login</button>
+            <!-- Footer -->
+            <p class="signup-prompt">Don't have an account? <a href="registration.html" id="signup-link">Sign Up</a></p>
+        </form>
+    </div>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
+    <script src="login.js"></script> <!-- Link to your JS file -->
+</body>
+</html>

@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220vh;
+    margin: 0;
+    background-image: url(back-image.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.registration-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin-left: 30px;
+}
+h2 {
+    margin-bottom: 20px;
+    color: #2575fc;
+}
+.section {
+    margin-bottom: 20px;
+}
+.first-form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: transparent;
+    outline: none;
+}
+.floating-label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #000000;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: transparent;
+    box-sizing: border-box;
+}
+textarea {
+    height: 30px;
+    resize: vertical;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #2575fc;
+}
+input[type="text"]:focus + .floating-label,
+input[type="email"]:focus + .floating-label,
+input[type="password"]:focus + .floating-label, textarea:focus + .floating-label, 
+input[type="text"]:not(:placeholder-shown) + .floating-label, 
+input[type="email"]:not(:placeholder-shown) + .floating-label, 
+input[type="password"]:not(:placeholder-shown) + .floating-label, 
+textarea:not(:placeholder-shown) + .floating-label {
+    top: -12px; /* Move label above the input field */
+    left: 10px;
+    font-size: 12px;
+    color: #2575fc;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: block;
+}
+#signup-button {
+    width: 28%;
+    padding: 12px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    margin: 30px 0 30px 0;
+    
+}
+#signup-button:hover {
+    background: linear-gradient(45deg, #5a0cbf, #1f64e8);
+}
+#back-button:hover {
+    background: #bbb;
+}
+.footer-text {
+    margin-top: 20px;
+}
+.footer-text a {
+    color: #2575fc;
+    text-decoration: none;
+}
+.footer-text a:hover {
+    text-decoration: underline;
+}
+.first-form-group {
+    display: flex;
+    align-items: center; /* Align label and input vertically */
+    margin-bottom: 16px; /* Space between input fields */
+    width: 470px;   
+}
+.first-form-group label {
+    white-space: nowrap; /* Prevent label text from wrapping */
+    margin-bottom: 20px; /* Add space between the label and input field */
+    font-size: 16px;
+    font-weight: bold;
+}
+.form-label {
+    width: 100px; 
+    text-align: right; 
+    margin-right: 30px;
+}
+/* Calendar Icon Integration */
+.input-wrapper {
+    width: 100%;
+}
+.calendar-icon {
+    position: relative;
+    right: 0px;
+    left: 0px;
+    top: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 28px; /* Adjust the size of the icon */
+    color: #2575fc; /* Icon color */
+}
+.form-input {
+    width: 100%;
+    padding: 8px 30px 8px 8px; /* Combine padding, with extra space for the icon on the right */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: transparent; /* Ensure background matches the design */
+}
+h3 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 25px;
+        max-width: 100%;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    input {
+        font-size: 14px;
+    }
+
+    #login-button {
+        font-size: 16px;
+    }
+}
+p{
+    margin: 20px 0 20px 0;
+}
+.floating-label-select {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+.personal-section,.contact-section,.address-section,.account-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items horizontally */
+    padding: 20px;
+}

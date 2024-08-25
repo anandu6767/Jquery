@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form with Handsontable</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css">
+</head>
+<body>
+    <h2>Address Information</h2>
+    <div id="address-table" class="hot"></div> <!-- Handsontable container -->
+
+    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+    <script>
+        const container = document.getElementById('address-table');
+        const hot = new Handsontable(container, {
+            data: [
+                ['', '', '', '']
+            ],
+            colHeaders: ['Street', 'City', 'State', 'Zip Code'],
+            columns: [
+                {type: 'text'},
+                {type: 'text'},
+                {type: 'text'},
+                {type: 'numeric'}
+            ],
+            rowHeaders: true,
+            width: '100%',
+            height: 300,
+            licenseKey: 'non-commercial-and-evaluation'
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree View Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
+</head>
+<body>
+    <h2>Select Your Interests</h2>
+    <div id="interests-tree"></div> <!-- Tree view container -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+    <script>
+        $(function () {
+            $('#interests-tree').jstree({
+                'core': {
+                    'data': [
+                        {
+                            "text": "Technology",
+                            "state": {"opened": true},
+                            "children": [
+                                {"text": "Web Development"},
+                                {"text": "Mobile Development"},
+                                {"text": "AI & Machine Learning"}
+                            ]
+                        },
+                        {
+                            "text": "Science",
+                            "children": [
+                                {"text": "Physics"},
+                                {"text": "Chemistry"},
+                                {"text": "Biology"}
+                            ]
+                        }
+                    ]
+                },
+                "checkbox": {
+                    "keep_selected_style": false
+                },
+                "plugins": ["checkbox"]
+            });
+        });
+    </script>
+</body>
+</html>
